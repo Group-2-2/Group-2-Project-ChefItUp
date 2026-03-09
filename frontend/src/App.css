@@ -1,8 +1,7 @@
 .app-container {
-  max-width: 480px;
-  width: 100%;
+  max-width: 480px; /* Keeps the mobile shape on desktop */
+  width: 100%;      /* Forces it to fill 100% of the mobile screen */
   min-height: 100vh;
-  margin: 0 auto;
   background-color: var(--bg-color, #ffffff);
   color: var(--text-color, #213547);
   box-shadow: 0 0 20px rgba(0,0,0,0.1);
