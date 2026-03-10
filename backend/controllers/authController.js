@@ -51,4 +51,4 @@ export const guestLogin = async (req, res) => {
   }
 };
 
-module.exports = { registerUser, loginUser, guestLogin };
+export default { registerUser, loginUser, guestLogin };

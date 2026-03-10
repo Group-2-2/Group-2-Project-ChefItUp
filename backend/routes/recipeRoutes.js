@@ -1,12 +1,16 @@
 import { Router } from "express";
 import {  createRecipe, getRecipes, getRecipeById, updateRecipe, deleteRecipe } from "../controllers/recipeController";
+import { protect } from "../middleware/auth";
 
 const router = Router();
 
-router.post("/recipes", createRecipe);
+// public routes
 router.get("/recipes", getRecipes);
 router.get("/recipes/:id", getRecipeById);
-router.put("/recipes/:id", updateRecipe);
-router.delete("/recipes/:id", deleteRecipe);
+
+// protect routes with auth middleware
+router.post("/recipes", protect, createRecipe);
+router.put("/recipes/:id", protect, updateRecipe);
+router.delete("/recipes/:id", protect, deleteRecipe);
 
 export default router;
