@@ -45,6 +45,9 @@ export const guestLogin = async (req, res) => {
     // create guest user token, customzie experiation as needed.
     const guestToken = jwt.sign({ role: "guest" }, process.env.JWT_SECRET, { expiresIn: "1d" });
 
+    // add logic to store guest token
+    // e.g., save to database or session storage
+
     res.status(200).json({ message: "Guest user logged in successfully", token: guestToken });
   } catch (error) {
     res.status(500).json({ error: error.message });
