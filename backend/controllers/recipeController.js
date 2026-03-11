@@ -1,6 +1,6 @@
 const getRecipes = (req, res) => {
   try {
-    // add logic to get all recipes from database
+    // add logic to get all recipes from database or specfic query parameters
 
     // example recipe to return
     res.status(200).json([
