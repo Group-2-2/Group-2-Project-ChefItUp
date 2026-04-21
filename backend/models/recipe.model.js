@@ -41,7 +41,7 @@ const ingredientSchema = new mongoose.Schema(
       trim: true,
     },
   },
-  { _id: false }
+  { _id: false },
 );
 
 const recipeSchema = new mongoose.Schema(
@@ -162,8 +162,16 @@ const recipeSchema = new mongoose.Schema(
       type: [ingredientSchema],
       default: [],
     },
+    ratingAverage: {
+      type: Number,
+      default: 0,
+    },
+    ratingCount: {
+      type: Number,
+      default: 0,
+    },
   },
-  { timestamps: true }
+  { timestamps: true },
 );
 
 export default mongoose.model("Recipe", recipeSchema);

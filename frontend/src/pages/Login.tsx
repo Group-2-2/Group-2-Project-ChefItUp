@@ -2,7 +2,11 @@ import { useState } from "react";
 import { useNavigate, Link } from "react-router-dom";
 import { api } from "../../service/api";
 
-export default function Login({ onAuthSuccess }: { onAuthSuccess?: () => void }) {
+export default function Login({
+  onAuthSuccess,
+}: {
+  onAuthSuccess?: () => void;
+}) {
   const navigate = useNavigate();
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
@@ -46,10 +50,13 @@ export default function Login({ onAuthSuccess }: { onAuthSuccess?: () => void })
             onChange={(e) => setPassword(e.target.value)}
           />
           {error && <p className="error-msg">{error}</p>}
-          <button className="primary-btn" type="submit">Log In</button>
+          <button className="primary-btn" type="submit">
+            Log In
+          </button>
         </form>
         <p className="auth-footer">
-          No account? <Link to="/register">Register</Link>
+          No account? <Link to="/register">Register</Link> or{" "}
+          <Link to="/">continue as guest</Link>.
         </p>
       </div>
     </div>
